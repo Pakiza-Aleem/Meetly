@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
@@ -17,8 +18,20 @@ const fileRoutes = require("./routes/fileRoutes");
 connectDB();
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+
+// CORS
+const clientUrl = process.env.CLIENT_URL || "http://localhost:5173";
+
+app.use(
+  cors({
+    origin: clientUrl,
+    credentials: true,
+  })
+);
+
 app.use(express.json());
+
+// Uploaded files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // API routes
@@ -27,18 +40,32 @@ app.use("/api/users", userRoutes);
 app.use("/api/meetings", meetingRoutes);
 app.use("/api/files", fileRoutes);
 
-app.get("/", (req, res) => res.send("Meetly API is running"));
+// Health check
+app.get("/", (req, res) => {
+  res.send("Meetly API is running");
+});
 
+// Error handling
 app.use(notFound);
 app.use(errorHandler);
 
-// Create one HTTP server shared by Express and Socket.io
+// Create HTTP server
 const server = http.createServer(app);
+
+// Socket.io
 const io = new Server(server, {
-  cors: { origin: process.env.CLIENT_URL || "http://localhost:5173" },
+  cors: {
+    origin: clientUrl,
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
 });
 
 socketHandlers(io);
 
+// Hosting provider will provide PORT
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`Meetly server running on port ${PORT}`));
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Meetly server running on port ${PORT}`);
+});
