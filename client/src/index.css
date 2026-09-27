@@ -111,3 +111,728 @@ textarea:focus {
   background: var(--black);
   border-radius: 4px;
 }
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+/* Create + Join section */
+
+.dashboard-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.dashboard-card {
+  padding: 24px;
+  min-width: 0;
+}
+
+.dashboard-card h3,
+.recent-meetings h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Join form */
+
+.join-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.join-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+.join-form .btn-secondary {
+  flex-shrink: 0;
+}
+
+/* Recent meetings */
+
+.recent-meetings {
+  padding: 24px;
+  margin-bottom: 40px;
+}
+
+.meeting-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meeting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  min-width: 0;
+}
+
+.meeting-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.meeting-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.meeting-meta {
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.rejoin-btn {
+  flex-shrink: 0;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .dashboard-container {
+    padding-top: 24px;
+  }
+
+  .dashboard-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .dashboard-container {
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
+
+  .dashboard-actions {
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .dashboard-card,
+  .recent-meetings {
+    padding: 18px;
+  }
+
+  .join-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .join-form input,
+  .join-form .btn-secondary {
+    width: 100%;
+  }
+
+  .meeting-item {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rejoin-btn {
+    width: 100%;
+  }
+
+  .meeting-meta {
+    font-size: 11px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .dashboard-card,
+  .recent-meetings {
+    padding: 15px;
+  }
+
+  .dashboard-card h3,
+  .recent-meetings h3 {
+    font-size: 17px;
+  }
+
+  .meeting-item {
+    padding: 12px;
+  }
+
+}
+
+/* =========================
+   AUTH / LOGIN
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+}
+
+.auth-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.auth-title {
+  text-align: center;
+  margin: 0;
+  color: var(--text);
+}
+
+.auth-error {
+  color: var(--danger);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 14px 0 0;
+}
+
+.auth-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.auth-register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.auth-link {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.auth-practice {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 600px) {
+
+  .auth-page {
+    padding: 20px;
+  }
+
+  .auth-form {
+    max-width: 100%;
+    padding: 26px 22px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .auth-page {
+    padding: 14px;
+  }
+
+  .auth-form {
+    padding: 22px 18px;
+  }
+
+  .auth-title {
+    font-size: 21px;
+  }
+
+}
+
+/* =========================
+   MEETING ROOM
+========================= */
+
+.meeting-room {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.meeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  padding: 12px 20px;
+  margin: 16px;
+
+  border-radius: 14px;
+}
+
+.meeting-header-info {
+  min-width: 0;
+  max-width: 70%;
+  text-align: right;
+}
+
+.meeting-title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.meeting-room-info {
+  font-size: 12px;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   MEDIA ERROR
+========================= */
+
+.meeting-media-error {
+  color: var(--danger);
+  text-align: center;
+  font-size: 13px;
+  margin: 0 16px 8px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.meeting-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  gap: 0;
+}
+
+.video-area {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* =========================
+   SIDE PANEL
+========================= */
+
+.meeting-side-panel {
+  width: 340px;
+  min-width: 340px;
+
+  margin: 0 16px 0 0;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.meeting-message {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+  padding: 24px;
+
+  text-align: center;
+  background: var(--bg);
+}
+
+.meeting-error {
+  color: var(--danger);
+  margin: 0;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .meeting-header {
+    margin: 12px;
+  }
+
+  .meeting-side-panel {
+    width: 300px;
+    min-width: 300px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .meeting-room {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
+  .meeting-header {
+    margin: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  .meeting-header-info {
+    max-width: 65%;
+  }
+
+  .meeting-title {
+    font-size: 14px;
+  }
+
+  .meeting-room-info {
+    font-size: 10px;
+  }
+
+  /*
+    On mobile the side panel becomes
+    an overlay-style section above controls.
+  */
+
+  .meeting-content {
+    position: relative;
+  }
+
+  .meeting-side-panel {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+
+    width: auto;
+    min-width: 0;
+
+    margin: 0;
+
+    z-index: 10;
+    border-radius: 12px;
+  }
+
+  .video-area {
+    width: 100%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+  .meeting-header {
+    margin: 6px;
+    padding: 9px 11px;
+  }
+
+  .meeting-header-info {
+    max-width: 62%;
+  }
+
+  .meeting-title {
+    font-size: 13px;
+  }
+
+  .meeting-room-info {
+    font-size: 9px;
+  }
+
+  .meeting-media-error {
+    font-size: 11px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* =========================
+   AUTH / LOGIN & REGISTER
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+}
+
+.auth-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.auth-title {
+  text-align: center;
+  margin: 0;
+  color: var(--text);
+}
+
+.auth-error {
+  color: var(--danger);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 14px 0 0;
+}
+
+.auth-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.auth-register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.auth-link {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Tablet / Mobile */
+
+@media (max-width: 600px) {
+  .auth-page {
+    padding: 20px;
+  }
+
+  .auth-form {
+    max-width: 100%;
+    padding: 26px 22px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 400px) {
+  .auth-page {
+    padding: 14px;
+  }
+
+  .auth-form {
+    padding: 22px 18px;
+  }
+
+  .auth-title {
+    font-size: 21px;
+  }
+}
+
+/* =========================
+   SPLASH SCREEN
+========================= */
+
+.splash-screen {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(0, 0, 0, 0.06),
+      var(--bg) 65%
+    );
+
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.splash-fade-out {
+  opacity: 0;
+}
+
+.splash-title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--black);
+  text-align: center;
+}
+
+.splash-title span {
+  color: var(--black);
+}
+
+.splash-tagline {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .splash-screen {
+    gap: 13px;
+    padding: 20px;
+  }
+
+  .splash-title {
+    font-size: 28px;
+  }
+
+  .splash-tagline {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .splash-screen {
+    gap: 11px;
+  }
+
+  .splash-title {
+    font-size: 25px;
+  }
+
+  .splash-tagline {
+    font-size: 12px;
+  }
+}
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Logo from "../components/Logo";
+
+// Simple branded splash screen; transitions once the app is ready
+export default function Splash() {
+  const navigate = useNavigate();
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    const fade = setTimeout(() => setFadeOut(true), 900);
+    const go = setTimeout(() => navigate("/login"), 1300);
+
+    return () => {
+      clearTimeout(fade);
+      clearTimeout(go);
+    };
+  }, [navigate]);
+
+  return (
+    <div className={`splash-screen ${fadeOut ? "splash-fade-out" : ""}`}>
+      <Logo size={64} withText={false} />
+
+      <h1 className="splash-title">
+        Meetly
+      </h1>
+
+      <p className="text-muted splash-tagline">
+        Connect. Collaborate. Create.
+      </p>
+    </div>
+  );
+}

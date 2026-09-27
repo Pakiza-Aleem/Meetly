@@ -1,22 +1,55 @@
-// Original "Meetly" mark: two interlocking speech/link shapes in emerald tones.
 export default function Logo({ size = 36, withText = true }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <svg width={size} height={size} viewBox="0 0 64 64">
-        <circle cx="32" cy="32" r="30" fill="#0B1914" />
+    <div className="logo">
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 64 64"
+        aria-hidden="true"
+      >
+        {/* Black circular background */}
+        <circle cx="32" cy="32" r="30" fill="#000000" />
+
+        {/* Left speech bubble */}
         <path
-          d="M20 24 C20 20 24 18 28 20 L36 24 C40 26 40 32 36 34 L28 38 C24 40 20 38 20 34 Z"
-          fill="#43E6A5"
+          d="M17 23
+             C17 18.5 20.5 16 25 16
+             H34
+             C38.5 16 42 19.5 42 24
+             V29
+             C42 33.5 38.5 37 34 37
+             H27
+             L20 42
+             V36
+             C18 34.5 17 32 17 29 Z"
+          fill="#FFFFFF"
         />
+
+        {/* Right speech bubble */}
         <path
-          d="M44 30 C44 26 40 24 36 26 L28 30 C24 32 24 38 28 40 L36 44 C40 46 44 44 44 40 Z"
-          fill="#8FFFC7"
-          opacity="0.85"
+          d="M47 29
+             C47 24.5 43.5 22 39 22
+             H34
+             C36 23.5 37 25.5 37 28
+             V33
+             C37 38.5 33 42 28 42
+             H25
+             C26.5 46 30 48 34 48
+             H40
+             L46 52
+             V46
+             C48 44 49 41 49 37 Z"
+          fill="#FFFFFF"
+          opacity="0.92"
         />
+
+        {/* Small connection point */}
+        <circle cx="32" cy="29" r="2.5" fill="#000000" />
       </svg>
+
       {withText && (
-        <span style={{ fontWeight: 700, fontSize: size * 0.5, letterSpacing: "-0.02em" }}>
-          Link<span style={{ color: "#43E6A5" }}>Up</span>
+        <span className="logo-text">
+          Meetly
         </span>
       )}
     </div>
