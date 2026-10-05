@@ -1,4 +1,4 @@
-export default function Logo({ size = 38, withText = true }) {
+export default function Logo({ size = 40, withText = true }) {
   return (
     <div
       className="meetly-logo"
@@ -6,9 +6,8 @@ export default function Logo({ size = 38, withText = true }) {
         "--logo-size": `${size}px`,
       }}
     >
-      {/* Meetly Icon */}
       <svg
-        className="meetly-logo-icon"
+        className="meetly-mark"
         width={size}
         height={size}
         viewBox="0 0 64 64"
@@ -16,55 +15,44 @@ export default function Logo({ size = 38, withText = true }) {
         xmlns="http://www.w3.org/2000/svg"
         aria-label="Meetly"
       >
-        {/* Black rounded square */}
-        <rect
-          x="3"
-          y="3"
-          width="58"
-          height="58"
-          rx="17"
+        {/* Meetly M / Connection Mark */}
+
+        {/* Left half */}
+        <path
+          d="
+            M12 42
+            V24
+            C12 17.373 17.373 12 24 12
+            C28.2 12 31.9 14.15 34 17.4
+            C36.1 14.15 39.8 12 44 12
+            C50.627 12 56 17.373 56 24
+            V42
+            H45
+            V25
+            C45 22.239 42.761 20 40 20
+            C37.239 20 35 22.239 35 25
+            V42
+            H29
+            V25
+            C29 22.239 26.761 20 24 20
+            C21.239 20 19 22.239 19 25
+            V42
+            H12Z
+          "
           fill="#000000"
         />
 
-        {/* Main video/chat shape */}
-        <path
-          d="M17 22.5
-             C17 19.46 19.46 17 22.5 17
-             H36
-             C39.04 17 41.5 19.46 41.5 22.5
-             V33.5
-             C41.5 36.54 39.04 39 36 39
-             H28.5
-             L21 45
-             V39
-             C18.79 38.34 17 36.25 17 33.5
-             V22.5Z"
-          fill="white"
-        />
-
-        {/* Video/collaboration cutout */}
-        <path
-          d="M29 24
-             L38 29
-             L29 34
-             V24Z"
-          fill="black"
-        />
-
-        {/* Small connection bubble */}
-        <path
-          d="M39 29
-             L47 24
-             C48.1 23.3 49.5 24.1 49.5 25.4
-             V38.6
-             C49.5 39.9 48.1 40.7 47 40
-             L39 35V29Z"
-          fill="white"
+        {/* Connection / meeting point */}
+        <circle
+          cx="32"
+          cy="46"
+          r="5"
+          fill="#000000"
         />
       </svg>
 
       {withText && (
-        <span className="meetly-logo-text">
+        <span className="meetly-wordmark">
           Meetly
         </span>
       )}

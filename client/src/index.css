@@ -802,25 +802,30 @@ textarea:focus {
     font-size: 12px;
   }
 }
+
 .meetly-logo {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 10px;
+
   height: var(--logo-size);
+
   flex-shrink: 0;
   white-space: nowrap;
 }
 
-.meetly-logo-icon {
+.meetly-mark {
   display: block;
+  width: var(--logo-size);
+  height: var(--logo-size);
+
   flex: 0 0 auto;
 }
 
-.meetly-logo-text {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
+.meetly-wordmark {
+  display: inline-block;
+
+  color: #000;
 
   font-family:
     Inter,
@@ -831,8 +836,6 @@ textarea:focus {
 
   font-size: calc(var(--logo-size) * 0.52);
   font-weight: 700;
+  letter-spacing: -0.8px;
   line-height: 1;
-  letter-spacing: -0.6px;
-
-  color: #000000;
 }
