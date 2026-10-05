@@ -802,37 +802,37 @@ textarea:focus {
     font-size: 12px;
   }
 }
+.meetly-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  height: var(--logo-size);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
 
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Logo from "../components/Logo";
+.meetly-logo-icon {
+  display: block;
+  flex: 0 0 auto;
+}
 
-// Simple branded splash screen; transitions once the app is ready
-export default function Splash() {
-  const navigate = useNavigate();
-  const [fadeOut, setFadeOut] = useState(false);
+.meetly-logo-text {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
 
-  useEffect(() => {
-    const fade = setTimeout(() => setFadeOut(true), 900);
-    const go = setTimeout(() => navigate("/login"), 1300);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-    return () => {
-      clearTimeout(fade);
-      clearTimeout(go);
-    };
-  }, [navigate]);
+  font-size: calc(var(--logo-size) * 0.52);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.6px;
 
-  return (
-    <div className={`splash-screen ${fadeOut ? "splash-fade-out" : ""}`}>
-      <Logo size={64} withText={false} />
-
-      <h1 className="splash-title">
-        Meetly
-      </h1>
-
-      <p className="text-muted splash-tagline">
-        Connect. Collaborate. Create.
-      </p>
-    </div>
-  );
+  color: #000000;
 }
