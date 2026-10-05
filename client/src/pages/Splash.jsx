@@ -23,7 +23,7 @@ export default function Splash() {
       <Logo size={64} withText={false} />
 
       <h1 className="splash-title">
-        Link<span>Up</span>
+        Meetly<span></span>
       </h1>
 
       <p className="text-muted splash-tagline">
